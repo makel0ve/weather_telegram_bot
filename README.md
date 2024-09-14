@@ -17,6 +17,10 @@
 ```
 git clone https://github.com/makel0ve/weather_telegram_bot.git
 ```
+- Перейти в папку с проектом
+```
+cd weather_telegram_bot
+```
 - Установить зависимости
 ```
 pip install -r requirements.txt
