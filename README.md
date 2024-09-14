@@ -14,9 +14,13 @@
 
 ## Установка
 - Клонировать репозиторий
-``` git clone https://github.com/makel0ve/weather_telegram_bot.git ```
+```
+git clone https://github.com/makel0ve/weather_telegram_bot.git
+```
 - Установить зависимости
-``` pip install -r requirements.txt ```
+```
+pip install -r requirements.txt
+```
 - Поместить токены в файл config.py
   - BOT_TOKEN: Токен ваше бота Telegram
   - OPENWEATHER_TOKEN: Ключ API OpenWeather
