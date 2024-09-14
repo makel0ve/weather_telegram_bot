@@ -24,6 +24,7 @@ pip install -r requirements.txt
 - Поместить токены в файл config.py
   - BOT_TOKEN: Токен ваше бота Telegram
   - OPENWEATHER_TOKEN: Ключ API OpenWeather
+
 Пример файла config.py
 ```
 BOT_TOKEN = "your_telegram_token"
