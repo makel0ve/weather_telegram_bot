@@ -1,46 +1,77 @@
-# Weather telegram bot
+# Weather Telegram Bot
 
-Этот бот для Telegram предоставляет информацию о текущей погоде, используя API OpenWeather.
+Телеграм-бот для получения текущей погоды. Отправляешь название города — получаешь температуру, влажность, давление, ветер, время восхода и заката.
 
-## Возможности
-- Получение актуальных данных о погоде на основе введенного города или местоположения.
-- Отображение температуры, погодных условий и других подробностей.
-- Простое управление через команды в Telegram.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Aiogram](https://img.shields.io/badge/Aiogram-3-green)
+![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange)
 
-## Требования
-- Python 3.7+
-- Токен Telegram-бота (получается через [BotFather](https://core.telegram.org/bots#botfather))
-- Ключ API OpenWeather ([openweathermap.org](https://openweathermap.org/))
+## Пример ответа
 
-## Установка
-- Клонировать репозиторий
 ```
+14:30 06/04/2026
+Погода в городе: Москва
+Температура: -2.5°C, пасмурно
+Влажность: 78%
+Давление: 748 мм.рт.ст
+Ветер: 3.2 м/с
+Восход: 06:15
+Закат: 19:42
+Продолжительность дня: 13ч 27мин
+```
+
+## Стек
+
+- **Aiogram 3** — асинхронный фреймворк для Telegram Bot API
+- **aiohttp** — асинхронные HTTP-запросы к OpenWeather API
+- **python-dotenv** — загрузка токенов из `.env`
+
+## Структура проекта
+
+```
+weather_telegram_bot/
+├── main.py            # Точка входа, запуск бота
+├── handlers.py        # Обработчики сообщений
+├── weather.py         # Логика запросов к OpenWeather API
+├── config.py          # Загрузка конфигурации из .env
+├── requirements.txt   # Зависимости
+├── .env.example       # Шаблон переменных окружения
+└── README.md
+```
+
+## Установка и запуск
+
+1. Клонировать репозиторий:
+
+```bash
 git clone https://github.com/makel0ve/weather_telegram_bot.git
-```
-- Перейти в папку с проектом
-```
 cd weather_telegram_bot
 ```
-- Установить зависимости
-```
+
+2. Установить зависимости:
+
+```bash
 pip install -r requirements.txt
 ```
-- Поместить токены в файл config.py
-  - BOT_TOKEN: Токен ваше бота Telegram
-  - OPENWEATHER_TOKEN: Ключ API OpenWeather
 
-Пример файла config.py
-```
-BOT_TOKEN = "your_telegram_token"
-OPENWEATHER_TOKEN = "your_weather_api_key"
+3. Создать `.env` файл и указать токены:
+
+```bash
+cp .env.example .env
 ```
 
-## Использование
 ```
+BOT_TOKEN=ваш_токен_от_BotFather
+OPENWEATHER_TOKEN=ваш_ключ_от_OpenWeather
+```
+
+4. Запустить:
+
+```bash
 python main.py
 ```
 
-## Файлы
-- main.py: Основной файл для запуска бота
-- handlers.py: Обработка входящих сообщений и ответов бота
-- config.py: Настройки для токенов и API-ключей
+## Получение токенов
+
+- **Telegram Bot Token** — создайте бота через [BotFather](https://t.me/BotFather)
+- **OpenWeather API Key** — зарегистрируйтесь на [openweathermap.org](https://openweathermap.org/api) и получите бесплатный ключ
